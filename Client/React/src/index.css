@@ -1,0 +1,200 @@
+:root {
+  --primary-color: #007bff; /* Bootstrap Blue */
+  --secondary-color: #6c757d; /* Bootstrap Gray */
+  --accent-color: #28a745; /* Bootstrap Green */
+  --background-color: #f8f9fa; /* Light Gray */
+  --text-color: #343a40; /* Dark Text */
+  --input-background:black; /* White input background */
+  --border-radius: 8px; /* Consistent border radius */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--background-color);
+  background-image: url('path/to/your/image.jpg'); /* Add your image here */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the background image */
+  padding: 20px; /* Add padding to the body */
+  color: var(--text-color); /* Ensure text color contrasts with the background */
+  animation: fadeInBackground 1.5s ease-in; /* Background fade-in animation */
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  animation: fadeIn 1s ease-in; /* Fade-in animation */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+/* Input and Button Styles */
+input {
+  font-family: inherit;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--secondary-color);
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s; /* Smooth transition */
+  padding: 10px;
+  width: 100%; /* Full width for the input */
+  font-size: 1rem;
+  animation: slideIn 0.5s ease-in-out; /* Slide-in animation */
+}
+
+input:focus {
+  outline: none; /* Remove default outline */
+  border-color: var(--accent-color); /* Change border color on focus */
+  box-shadow: 0 0 5px var(--accent-color); /* Glow effect */
+  transform: scale(1.02); /* Slightly enlarge on focus */
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+  border-radius: var(--border-radius); /* Consistent border radius */
+  animation: bounceIn 0.5s ease-in-out; /* Bounce-in animation */
+}
+
+button:hover {
+  background-color: var(--accent-color); /* Change background on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+}
+
+.response {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  background-color: white; /* White background for response */
+  color: var(--text-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1s forwards; /* Fade-in animation */
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px); /* Slide from above */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.full-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  transition: background-color 0.5s ease;
+}
+
+.dark-mode {
+  background-color: #121212;
+}
+
+.App {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dark-mode .App {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.question-input,
+.mic-button,
+.submit-button,
+.action-button {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.question-input {
+  width: 70%;
+}
+
+.mic-button,
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.dark-mode .mic-button,
+.dark-mode .submit-button {
+  background-color: #8bc34a;
+}
+
+.toggle-mode-button {
+  background-color: #008cba;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dark-mode .toggle-mode-button {
+  background-color: #00bcd4;
+}
+
+.response-text {
+  font-size: 1.1em;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
